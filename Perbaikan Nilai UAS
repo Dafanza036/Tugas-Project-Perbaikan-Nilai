@@ -1,0 +1,32 @@
+def turn_right():
+    repeat 3:
+        turn_left()
+        
+def turn_around():
+    turn_left()
+    turn_left()
+    
+def check_windows():
+    while wall_on_right():
+        if wall_in_front():
+            turn_left()
+        else:
+            move()
+    if at_goal():
+        done()
+        
+def close_windows():
+    turn_right()
+    build_wall()
+    turn_left()
+    
+
+move()
+turn_right()
+move()
+while not at_goal():
+    check_windows()
+    close_windows()
+        
+        
+            
